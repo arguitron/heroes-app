@@ -5,8 +5,9 @@ import { types } from "../../types/types";
 
 export const LoginScreen = () => {
   const navigate = useNavigate();
-  const { user, dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   const handleLogin = () => {
+    const lastPath = localStorage.getItem("lastPath") || "/marvel";
     dispatch({
       type: types.login,
       payload: {
@@ -14,7 +15,7 @@ export const LoginScreen = () => {
       },
     });
 
-    navigate("/marvel", {
+    navigate(lastPath, {
       replace: true,
     });
   };
