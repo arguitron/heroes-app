@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../selectors/getHeroById";
 import { Navigate } from "react-router-dom";
 
+export const heroImages = require.context("../../assets");
+
 export const HeroScreen = () => {
   const { heroId } = useParams();
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ export const HeroScreen = () => {
     <div className="row mt-5 animate__animated animate__bounceInLeft">
       <div className="col-4 animate__animated animate__bounceInLeft">
         <img
-          src={`/assets/${id}.jpg`}
+          src={heroImages(`./${id}.jpg`)}
           alt={superhero}
           className="img-thumbnail"
         />
