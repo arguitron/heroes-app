@@ -11,7 +11,7 @@ export const LoginScreen = () => {
     dispatch({
       type: types.login,
       payload: {
-        name: "Abelaxo crack",
+        name: "Usuario01",
       },
     });
 
